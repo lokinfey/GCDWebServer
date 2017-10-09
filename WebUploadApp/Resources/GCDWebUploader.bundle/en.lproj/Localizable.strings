@@ -1,0 +1,4 @@
+"PROLOGUE" = "<p>Drag &amp; drop files on this window or use the \"Upload Files&hellip;\" button to upload new files.</p>";
+"FOOTER_FORMAT" = "%@ %@";
+"FOOTER" = "South China Normal University";
+// 此处无 "EPILOGUE" 字段时，index.html 中 %epilogue% 结果为上传目录（见 GCDWebUploader.m 中 initWithUploadDirectory 方法中代码）

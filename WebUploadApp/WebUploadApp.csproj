@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{72881E54-811F-4968-91F0-7E9441572FD8}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>WebUploadApp</RootNamespace>
+    <AssemblyName>WebUploadApp</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchProfiling>true</MtouchProfiling>
+    <IOSDebuggerPort>16147</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IOSDebuggerPort>43456</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\New Folder\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="libHTTPServer.a">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebUploadApp.Binding\WebUploadApp.Binding.csproj">
+      <Project>{D811E0E2-9ECE-498C-8EC2-B41FE335BF3B}</Project>
+      <Name>WebUploadApp.Binding</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\Info.plist" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\index.html" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\css\bootstrap-theme.css" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\css\bootstrap.css" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\css\index.css" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\css\jquery.fileupload.css" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\en.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\fonts\glyphicons-halflings-regular.eot" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\fonts\glyphicons-halflings-regular.svg" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\fonts\glyphicons-halflings-regular.ttf" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\fonts\glyphicons-halflings-regular.woff" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\js\bootstrap.min.js" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\js\html5shiv.min.js" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\js\index.js" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\js\jquery.fileupload.js" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\js\jquery.iframe-transport.js" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\js\jquery.jeditable.js" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\js\jquery.min.js" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\js\jquery.ui.widget.js" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\js\respond.min.js" />
+    <BundleResource Include="Resources\GCDWebUploader_cn.bundle\js\tmpl.min.js" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\Info.plist" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\index.html" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\css\bootstrap-theme.css" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\css\bootstrap.css" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\css\index.css" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\css\jquery.fileupload.css" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\en.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\fonts\glyphicons-halflings-regular.eot" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\fonts\glyphicons-halflings-regular.svg" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\fonts\glyphicons-halflings-regular.ttf" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\fonts\glyphicons-halflings-regular.woff" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\js\bootstrap.min.js" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\js\html5shiv.min.js" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\js\index.js" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\js\jquery.fileupload.js" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\js\jquery.iframe-transport.js" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\js\jquery.jeditable.js" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\js\jquery.min.js" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\js\jquery.ui.widget.js" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\js\respond.min.js" />
+    <BundleResource Include="Resources\GCDWebUploader.bundle\js\tmpl.min.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>
